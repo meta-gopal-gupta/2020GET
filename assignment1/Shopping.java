@@ -4,28 +4,29 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class Shopping {
-	int ProductPrice[] = new int[5];
-	String ProductName[] = new String[5];
-	ArrayList<bucket> al = new ArrayList<bucket>();
+	int priceOfProduct[] = new int[5];
+	String nameOfProduct[] = new String[5];
+	ArrayList<bucket> userBucket = new ArrayList<bucket>();
 
 	void setProductName() {
-		ProductName[0] = "Nokia";
-		ProductName[1] = "Samsung";
-		ProductName[2] = "Gionee";
-		ProductName[3] = "Apple";
-		ProductName[4] = "Xiomi";
+		nameOfProduct[0] = "Nokia";
+		nameOfProduct[1] = "Samsung";
+		nameOfProduct[2] = "Gionee";
+		nameOfProduct[3] = "Apple";
+		nameOfProduct[4] = "Xiomi";
 	}
+	
 
 	void setProductPrice() {
-		ProductPrice[0] = 2;
-		ProductPrice[1] = 4;
-		ProductPrice[2] = 6;
-		ProductPrice[3] = 8;
-		ProductPrice[4] = 10;
+		priceOfProduct[0] = 2;
+		priceOfProduct[1] = 4;
+		priceOfProduct[2] = 6;
+		priceOfProduct[3] = 8;
+		priceOfProduct[4] = 10;
 	}
 
 	int noOfProductInList() {
-		return ProductName.length;
+		return nameOfProduct.length;
 	}
 
 	void displayListOfProducts() {
@@ -33,16 +34,17 @@ public class Shopping {
 				.println("*********************************************************");
 		System.out.println("SN\tProduct Name\tPrice");
 		for (int i = 0; i < 5; i++)
-			System.out.println(i + 1 + "\t" + ProductName[i] + "\t\t"
-					+ ProductPrice[i]);
+			System.out.println(i + 1 + "\t" + nameOfProduct[i] + "\t\t"
+					+ priceOfProduct[i]);
 		System.out
 				.println("*********************************************************");
 	}
-
-	int SelectOption(Scanner scanner) {
+	
+	// Features of bucket
+	int displayOptions(Scanner scanner) {
 		int SelectOption;
 		System.out
-				.println("*********************************************************");
+				.println("\n*********************************************************");
 		System.out.println("1: Add Product in Bucket");
 		System.out.println("2: Remove Product form Bucket");
 		System.out.println("3: Update Orders List");
@@ -55,60 +57,60 @@ public class Shopping {
 		return SelectOption;
 	}
 
-	void AddInCart(int ProductSN, int Quantity) {
-		System.out.println(Quantity + " Peace Of " + ProductName[ProductSN - 1]
+	void addInCart(int sequenceNumberOfProduct, int quantityOfProduct) {
+		System.out.println(quantityOfProduct + " Peace Of " + nameOfProduct[sequenceNumberOfProduct - 1]
 				+ " SmartPhone is Successfully Added");
-		updateList(ProductSN, Quantity);
+		updateList(sequenceNumberOfProduct, quantityOfProduct);
 	}
 
 	boolean isListEmpty() {
-		return al.isEmpty();
+		return userBucket.isEmpty();
 	}
 
 	int sizeOfList() {
-		return al.size();
+		return userBucket.size();
 	}
 
-	void removeFromList(int RemoveProductSN) {
-		al.remove(RemoveProductSN - 1);
+	void removeFromList(int sequenceToRemoveProduct) {
+		userBucket.remove(sequenceToRemoveProduct - 1);
 	}
 
 	int totalPrice() {
 		int TotalPrice = 0;
-		Iterator itr = al.iterator();
+		Iterator itr = userBucket.iterator();
 
 		// traversing elements of ArrayList scannerect
 		while (itr.hasNext()) {
 			bucket st = (bucket) itr.next();
-			TotalPrice = TotalPrice + st.price;
+			TotalPrice = TotalPrice + st.productPrice;
 		}
 		return TotalPrice;
 	}
 
 	int totalProduct() {
-		int TotalProduct = 0;
-		Iterator itr = al.iterator();
+		int totalProduct = 0;
+		Iterator itr = userBucket.iterator();
 
 		// traversing elements of ArrayList scannerect
 		while (itr.hasNext()) {
 			bucket st = (bucket) itr.next();
-			TotalProduct = TotalProduct + st.qnt;
+			totalProduct = totalProduct + st.productQuantity;
 		}
-		return TotalProduct;
+		return totalProduct;
 	}
 
 	void displayFinalBucketProducts() {
-		Iterator itr = al.iterator();
-		int ProductSequence = 1;
+		Iterator itr = userBucket.iterator();
+		int productSequence = 1;
 		System.out
 				.println("*********************************************************");
 		System.out.println("Product Sequence\tProduct Name\tQuantity\tPrice");
 
-		// traversing elements of ArrayList scannerect
+		// traversing elements of ArrayList
 		while (itr.hasNext()) {
 			bucket st = (bucket) itr.next();
-			System.out.println(ProductSequence++ + "\t\t\t" + st.name + "\t\t"
-					+ st.qnt + "\t\t" + st.price);
+			System.out.println(productSequence++ + "\t\t\t" + st.productName + "\t\t"
+					+ st.productQuantity + "\t"+st.productSequence+"\t" + st.productPrice);
 		}
 		System.out
 				.println("*********************************************************");
@@ -120,35 +122,39 @@ public class Shopping {
 		System.out.println("Quantity of Products: " + totalProduct()
 				+ "\nTotal Price: " + totalPrice());
 	}
-
-	void updateList(int productSequenceNumber, int Qnt) {
-		Iterator itr = al.iterator();
+	
+	void updateList(int productSequenceNumber, int quantityOfProduct) {
+		Iterator itr = userBucket.iterator();
 		boolean flag = true;
-		// traversing elements of ArrayList scannerect
+		// traversing elements of ArrayList 
+		// If Product already exist in bucket
 		while (itr.hasNext()) {
 			bucket st = (bucket) itr.next();
-			if (st.sn == productSequenceNumber - 1) {
-				st.qnt = st.qnt + Qnt;
-				st.price = st.price
-						+ (Qnt * ProductPrice[productSequenceNumber - 1]);
+			if (st.productSequence == productSequenceNumber - 1) {
+				st.productQuantity = st.productQuantity + quantityOfProduct;
+				st.productPrice = st.productPrice
+						+ (quantityOfProduct * priceOfProduct[productSequenceNumber - 1]);
 				flag = false;
 				break;
 			}
 		}
+		// If product doesn't exist in bucket
 		if (flag) {
-			al.add(new bucket(productSequenceNumber - 1,
-					ProductName[productSequenceNumber - 1],
-					ProductPrice[productSequenceNumber - 1] * Qnt, Qnt));
+			userBucket.add(new bucket(productSequenceNumber - 1,
+					nameOfProduct[productSequenceNumber - 1],
+					priceOfProduct[productSequenceNumber - 1] * quantityOfProduct, quantityOfProduct));
 		}
 	}
+	
+	// It will change old quantity with new quantity
 	void reUpdateBucketProduct(int productSequenceNumber, int Qnt){
-		Iterator itr = al.iterator();
+		Iterator itr = userBucket.iterator();
 		// traversing elements of ArrayList scannerect
 		while (itr.hasNext()) {
 			bucket st = (bucket) itr.next();
-			if (st.sn == productSequenceNumber - 1) {
-				st.qnt =  Qnt;
-				st.price = Qnt * ProductPrice[productSequenceNumber - 1];
+			if (st.productSequence == productSequenceNumber - 1) {
+				st.productQuantity =  Qnt;
+				st.productPrice = Qnt * priceOfProduct[productSequenceNumber - 1];
 				break;
 			}
 		}
@@ -156,15 +162,15 @@ public class Shopping {
 }
 
 class bucket {
-	int sn;
-	String name;
-	int price;
-	int qnt;
+	int productSequence;
+	String productName;
+	int productPrice;
+	int productQuantity;
 
 	bucket(int sn, String name, int price, int qnt) {
-		this.sn = sn;
-		this.name = name;
-		this.price = price;
-		this.qnt = qnt;
+		this.productSequence = sn;
+		this.productName = name;
+		this.productPrice = price;
+		this.productQuantity = qnt;
 	}
 }

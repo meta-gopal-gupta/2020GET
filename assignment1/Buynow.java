@@ -2,12 +2,12 @@ package assignment1;
 
 import java.util.Scanner;
 
-public class shop {
+public class Buynow {
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
 		User newUser = new User();
-		// newUser.authenticate(scanner);
+	 newUser.authenticate(scanner);
 		int Option;
 		Shopping item = new Shopping();
 		item.setProductName();
@@ -15,10 +15,11 @@ public class shop {
 
 		item.displayListOfProducts();
 		while (true) {
-			Option = item.SelectOption(scanner);
+			Option = item.displayOptions(scanner);
 			switch (Option) {
 
-			// Case 1 to Add New Item in Our Bucket
+			// Case 1 to Add New Item in Bucket
+			// Add same product twice or more will give addition of there quantity
 			case 1:
 				item.displayListOfProducts();
 				int sequenceNumberOfProduct,
@@ -27,29 +28,36 @@ public class shop {
 				int maxProductQuantity = 100;
 				int minProductQuantity = 0;
 				System.out.print("Product SN: ");
+				
+				//To check Product Details is correct or not
 				sequenceNumberOfProduct = scanner.nextInt();
 				if (!(sequenceNumberOfProduct <= item.noOfProductInList())) {
 					System.out.println("Sorry Now we have only "
 							+ item.noOfProductInList() + " Products");
-				} else if (!(sequenceNumberOfProduct > indexOfFirstProducts)) {
+				} 
+				else if (!(sequenceNumberOfProduct > indexOfFirstProducts)) {
 					System.out.println("Sorry Prduct Sequence Starts From 1");
-				} else {
+				} 
+				else {
 					System.out.print("Quantitiy: ");
 					quantityOfProduct = scanner.nextInt();
 					if (!(quantityOfProduct > minProductQuantity)) {
 						System.out
 								.println("Sorry you need to buy one or more product");
-					} else if (!(quantityOfProduct < maxProductQuantity)) {
+					} 
+					else if (!(quantityOfProduct < maxProductQuantity)) {
 						System.out
 								.println("Sorry at a time you can buy 100 or less products");
-					} else {
-						item.AddInCart(sequenceNumberOfProduct,
+					} 
+					else {
+						item.addInCart(sequenceNumberOfProduct,
 								quantityOfProduct);
 					}
 				}
 				break;
 
 			// Case 2 to remove Product from the List
+			
 			case 2:
 				if (item.isListEmpty() == true)
 					System.out.println("Sorry Your Bucket Is Empty");
@@ -70,6 +78,7 @@ public class shop {
 				break;
 
 			// Case 3 to update Product from the List
+			// It will change last quantity with new quantity 
 			case 3:
 				if (item.isListEmpty() == true)
 					System.out.println("Sorry Your Bucket Is Empty");
@@ -80,13 +89,15 @@ public class shop {
 					System.out
 							.print("Enter Product Sequence Number which you want to Update: ");
 					sequenceNumberOfUpdateableProduct = scanner.nextInt();
-					System.out.print("Enter new Quantity of Product: ");
-					newQuantity = scanner.nextInt();
+					
 					if (sequenceNumberOfUpdateableProduct > item.sizeOfList()) {
 						System.out.print("Sorry Product Sequence "
 								+ sequenceNumberOfUpdateableProduct
 								+ " Doesn't Exist");
 					} else {
+						System.out.print("Enter new Quantity of Product: ");
+						newQuantity = scanner.nextInt();
+						
 						if (newQuantity == quantityIsZero) {
 							item.removeFromList(sequenceNumberOfUpdateableProduct);
 						} else {
@@ -98,8 +109,9 @@ public class shop {
 					}
 				}
 				break;
-			// Case 3 to Show The Product List
-
+				
+			// Case 4 to Show The Product List
+			// It will Display Updated List	
 			case 4:
 				if (item.isListEmpty() == true)
 					System.out.println("Sorry Your Bucket Is Empty");
@@ -108,8 +120,10 @@ public class shop {
 				}
 				break;
 
-			// Case 4 to Place Order And Exit
+			// Case 5 to Place Order And Exit
+			// This will show final Price and Products Quantity
 			case 5:
+				// When Bucket is Empty
 				if (item.isListEmpty() == true) {
 					System.out.println("Your Bucket is Empty!");
 
@@ -131,7 +145,9 @@ public class shop {
 					} else {
 						System.out.println("Sorry We Didn't Understand ");
 					}
-				} else {
+				} 
+				//When Bucket Having Some Products
+				else {
 					item.orderPlace();
 					System.out.println("DO you want to buy more Product ?");
 					System.out.println("Press 1 for Yes and 2 for No");

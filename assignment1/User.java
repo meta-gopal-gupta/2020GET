@@ -12,7 +12,7 @@ public class User {
 		System.out.print("Hello User Please Enter Passowrd:");
 		Password = scanner.nextLine();
 		System.out.println("Thank You for Authentication");
-		System.out.println("Now You Can Buy Anything Here :)");
+		System.out.println("Now You Can Buy Anything Here");
 	}
 
 }
