@@ -45,8 +45,9 @@ public class Shopping {
 				.println("*********************************************************");
 		System.out.println("1: Add Product in Bucket");
 		System.out.println("2: Remove Product form Bucket");
-		System.out.println("3: Display Orders List");
-		System.out.println("4: Place the Order");
+		System.out.println("3: Update Orders List");
+		System.out.println("4: Display Orders List");
+		System.out.println("5: Place the Order");
 		System.out.print("Your Option: ");
 		SelectOption = scanner.nextInt();
 		System.out
@@ -138,6 +139,18 @@ public class Shopping {
 			al.add(new bucket(productSequenceNumber - 1,
 					ProductName[productSequenceNumber - 1],
 					ProductPrice[productSequenceNumber - 1] * Qnt, Qnt));
+		}
+	}
+	void reUpdateBucketProduct(int productSequenceNumber, int Qnt){
+		Iterator itr = al.iterator();
+		// traversing elements of ArrayList scannerect
+		while (itr.hasNext()) {
+			bucket st = (bucket) itr.next();
+			if (st.sn == productSequenceNumber - 1) {
+				st.qnt =  Qnt;
+				st.price = Qnt * ProductPrice[productSequenceNumber - 1];
+				break;
+			}
 		}
 	}
 }

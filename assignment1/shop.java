@@ -69,8 +69,38 @@ public class shop {
 				}
 				break;
 
-			// Case 3 to Show The Product List
+			// Case 3 to update Product from the List
 			case 3:
+				if (item.isListEmpty() == true)
+					System.out.println("Sorry Your Bucket Is Empty");
+				else {
+					int sequenceNumberOfUpdateableProduct;
+					int newQuantity, quantityIsZero = 0;
+					item.displayFinalBucketProducts();
+					System.out
+							.print("Enter Product Sequence Number which you want to Update: ");
+					sequenceNumberOfUpdateableProduct = scanner.nextInt();
+					System.out.print("Enter new Quantity of Product: ");
+					newQuantity = scanner.nextInt();
+					if (sequenceNumberOfUpdateableProduct > item.sizeOfList()) {
+						System.out.print("Sorry Product Sequence "
+								+ sequenceNumberOfUpdateableProduct
+								+ " Doesn't Exist");
+					} else {
+						if (newQuantity == quantityIsZero) {
+							item.removeFromList(sequenceNumberOfUpdateableProduct);
+						} else {
+							item.reUpdateBucketProduct(
+									sequenceNumberOfUpdateableProduct,
+									newQuantity);
+						}
+
+					}
+				}
+				break;
+			// Case 3 to Show The Product List
+
+			case 4:
 				if (item.isListEmpty() == true)
 					System.out.println("Sorry Your Bucket Is Empty");
 				else {
@@ -79,7 +109,7 @@ public class shop {
 				break;
 
 			// Case 4 to Place Order And Exit
-			case 4:
+			case 5:
 				if (item.isListEmpty() == true) {
 					System.out.println("Your Bucket is Empty!");
 
