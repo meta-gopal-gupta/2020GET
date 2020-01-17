@@ -7,8 +7,8 @@ public class GradeOperation {
 	 */
 	float averageOfAllGrades(int[] grades){
 		int totalOfGrades = 0;
-		for(int i=0;i<grades.length;i++){
-			totalOfGrades += grades[i];
+		for(int index=0;index<grades.length;index++){
+			totalOfGrades += grades[index];
 		}
 		float average = (float)totalOfGrades/ grades.length;
 		return average;
@@ -21,9 +21,9 @@ public class GradeOperation {
 	 */
 	int maximumOfAllGrades(int[] grades){
 		int maxGrade = grades[0];
-		for(int i=0;i<grades.length;i++){
-			if(maxGrade < grades[i]){
-				maxGrade = grades[i];
+		for(int index=0;index<grades.length;index++){
+			if(maxGrade < grades[index]){
+				maxGrade = grades[index];
 			}
 		}
 		return maxGrade;
@@ -36,9 +36,9 @@ public class GradeOperation {
 	 */
 	int minimumOfAllGrades(int[] grades){
 		int minGrade = grades[0];
-		for(int i=0;i<grades.length;i++){
-			if(minGrade > grades[i]){
-				minGrade = grades[i];
+		for(int index=0;index<grades.length;index++){
+			if(minGrade > grades[index]){
+				minGrade = grades[index];
 			}
 		}
 		return minGrade;
@@ -53,8 +53,8 @@ public class GradeOperation {
 		float passedStudentPercent = 0;
 		float minimumPassingMarks = 40;
 		int passedStudents = 0;
-		for(int i=0;i<grades.length;i++){
-			if(grades[i] > minimumPassingMarks){
+		for(int index=0;index<grades.length;index++){
+			if(grades[index] > minimumPassingMarks){
 				passedStudents++;
 			}
 		}
