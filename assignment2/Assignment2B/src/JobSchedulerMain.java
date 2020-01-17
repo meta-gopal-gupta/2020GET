@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class JobScheduler {
+public class JobSchedulerMain {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		FCFS objOfFCFS = new FCFS();
+		TimeOperation computeTime = new TimeOperation();
 		System.out.print("How Many Process Do You Wants To Exicute: ");
 		int noOfProcess = scanner.nextInt();
 
@@ -12,37 +12,24 @@ public class JobScheduler {
 		float averageWaitingTime;
 		
 		// To Read Arrival Time And Burst Time
-		for (int i = 0; i < noOfProcess; i++) {
-			System.out.println("\nFor Process Number " + (i + 1));
+		for (int index = 0; index < noOfProcess; index++) {
+			System.out.println("\nFor Process Number " + (index + 1));
 			System.out.print("Arrival Time: ");
-			timeArray[i][0] = scanner.nextInt();
+			timeArray[index][0] = scanner.nextInt();
 			System.out.print("Burst Time: ");
-			timeArray[i][1] = scanner.nextInt();
+			timeArray[index][1] = scanner.nextInt();
 		}
 		// Sort The Array 
-		for (int i = 0; i < noOfProcess; i++) {
-			for (int j = i + 1; j < noOfProcess; j++) {
-				if(timeArray[i][0]>timeArray[j][0]){
-					int temp ;
-					temp = timeArray[i][0];
-					timeArray[i][0] = timeArray[j][0];
-					timeArray[j][0] = temp;
-					
-					temp = timeArray[i][1];
-					timeArray[i][1] = timeArray[j][1];
-					timeArray[j][1] = temp;
-					
-				}
-			}
-		}
+
+		timeArray = computeTime.arraySorting(timeArray);
 		// To Read Arrival Time And Burst Time
 		
 		
-		completionTimeArray = objOfFCFS.complitionTime(timeArray);
-		waitingTimeArray = objOfFCFS.waitingTime(timeArray);
-		turnAroundTimeArray = objOfFCFS.turnAroundTime(timeArray);
-		averageWaitingTime = objOfFCFS.averageWaitingTime(timeArray);
-		maximumWaitingTime = objOfFCFS.maximumWaitingTime(timeArray);
+		completionTimeArray = computeTime.complitionTime(timeArray);
+		waitingTimeArray = computeTime.waitingTime(timeArray);
+		turnAroundTimeArray = computeTime.turnAroundTime(timeArray);
+		averageWaitingTime = computeTime.averageWaitingTime(timeArray);
+		maximumWaitingTime = computeTime.maximumWaitingTime(timeArray);
 		
 		
 		System.out

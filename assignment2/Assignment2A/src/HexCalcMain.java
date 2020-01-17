@@ -7,13 +7,13 @@ import java.util.Scanner;
  * And Conversion  on HexaDecimal Values
  * 
  */
-public class HexCalc {
+public class HexCalcMain {
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
 		int firstDecimalNumber = 0, secondDecimalNumber = 0;
 		int decimalNumber = 0;
-		int base = 16; // Conversion Base Value
+		int base = 8; // Conversion Base Value
 		String firstHexaDecimalNumber = "", secondHexaDecimalNumber = "";
 		String number = "";
 

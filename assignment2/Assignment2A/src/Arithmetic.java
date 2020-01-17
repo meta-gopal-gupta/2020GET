@@ -1,32 +1,28 @@
-import java.util.Scanner;
-
 public class Arithmetic {
 
-	Scanner scanner = new Scanner(System.in);
-	
 	/*
 	 * HexaDecimal to Decimal Conversion
 	 * @param HexaDecimal String and Conversion Base
 	 * @return Decimal Converted Value
 	 * 
 	 * */
-	int conversionInDecimal(String s, int base) {
-		int b = 1, x = 0, charToAscii = 0;
-		for (int i = s.length() - 1; i >= 0; i--) {
-			if (s.charAt(i) >= '0' && s.charAt(i) <= '9') {
-				charToAscii = s.charAt(i) - 48;
+	int conversionInDecimal(String inputString, int baseValue) {
+		int increasingBasePower = 1, decimalValue = 0, charToAscii = 0;
+		for (int index = inputString.length() - 1; index >= 0; index--) {
+			if (inputString.charAt(index) >= '0' && inputString.charAt(index) <= '9') {
+				charToAscii = inputString.charAt(index) - 48;
 			}
-			else if (s.charAt(i) >= 'A' && s.charAt(i) <= 'F') {
-				charToAscii = s.charAt(i) - 65 + 10;
+			else if (inputString.charAt(index) >= 'A' && inputString.charAt(index) <= 'F') {
+				charToAscii = inputString.charAt(index) - 65 + 10;
 			}
-			else if (s.charAt(i) >= 'a' && s.charAt(i) <= 'f') {
-				charToAscii = s.charAt(i) - 97 + 10;
+			else if (inputString.charAt(index) >= 'a' && inputString.charAt(index) <= 'f') {
+				charToAscii = inputString.charAt(index) - 97 + 10;
 			}
 			
-			x += charToAscii * b;
-			b = b * base;
+			decimalValue += charToAscii * increasingBasePower;
+			increasingBasePower = increasingBasePower * baseValue;
 		}
-		return x;
+		return decimalValue;
 	}
 	
 	/*
@@ -34,10 +30,10 @@ public class Arithmetic {
 	 * @param HexaDecimal String and Conversion Base
 	 * 
 	 * */
-	boolean isHexaDecimal(String s) {
+	boolean isHexaDecimal(String inputString) {
 		
-		for (int i = s.length() - 1; i >= 0; i--) {
-			if (!((s.charAt(i) >= '0' && s.charAt(i) <= '9') || (s.charAt(i) >= 'A' && s.charAt(i) <= 'F') || (s.charAt(i) >= 'a' && s.charAt(i) <= 'f'))) {
+		for (int index = inputString.length() - 1; index >= 0; index--) {
+			if (!((inputString.charAt(index) >= '0' && inputString.charAt(index) <= '9') || (inputString.charAt(index) >= 'A' && inputString.charAt(index) <= 'F') || (inputString.charAt(index) >= 'a' && inputString.charAt(index) <= 'f'))) {
 				return false;
 			}
 		}
@@ -51,20 +47,20 @@ public class Arithmetic {
 	 * 
 	 * */
 	String reverseConversionFromDecimal(int decimalValue, int base) {
-		String convert = "";
+		String convertedValue = "";
 		while (decimalValue != 0) {
-			int temp = 0;
-			temp = decimalValue % base;
-			if (temp < 10) {
-				convert = ((char) (temp + 48)) + convert;
+			int reminder = 0;
+			reminder = decimalValue % base;
+			if (reminder < 10) {
+				convertedValue = ((char) (reminder + 48)) + convertedValue;
 			}
 			else {
-				convert = ((char) (temp + 55)) + convert;
+				convertedValue = ((char) (reminder + 55)) + convertedValue;
 			}
 			decimalValue = decimalValue / base;
 		}
 
-		return convert;
+		return convertedValue;
 	}
 
 	
@@ -92,8 +88,8 @@ public class Arithmetic {
 			return true;
 		}
 		else {
-			for (int i = 0; i < string1.length(); i++) {
-				if (string1.charAt(i) > string2.charAt(i)) {
+			for (int index = 0; index < string1.length(); index++) {
+				if (string1.charAt(index) > string2.charAt(index)) {
 					return true;
 				}
 
@@ -107,8 +103,8 @@ public class Arithmetic {
 			return true;
 		}
 		else {
-			for (int i = 0; i < string1.length(); i++) {
-				if (string1.charAt(i) < string2.charAt(i)) {
+			for (int index = 0; index < string1.length(); index++) {
+				if (string1.charAt(index) < string2.charAt(index)) {
 					return true;
 				}
 
