@@ -26,42 +26,16 @@ public class Cage {
 	 * @param animalWeight
 	 * @return true if animal add successfully 
 	 */
-	public boolean addAnimal(String type, String animalName, int animalAge,int animalWeight) {
+	public boolean addAnimal(Animal animal) {
 		
 		animalCounter++;
 		
 		if(!isSpaceAvaliable()){
 			return false;
 		}
+		listOfAnimal.put(animalCounter, animal);
+		return true;
 		
-		Animal animal = null;
-		if ("Lion".equalsIgnoreCase(type)) {
-			animal = new Eagle(animalName, animalAge, animalWeight);
-		}
-
-		if ("Tiger".equalsIgnoreCase(type)) {
-			animal = new Tiger(animalName, animalAge, animalWeight);
-		}
-
-		if ("Peacock".equalsIgnoreCase(type)) {
-			animal = new Peacock(animalName, animalAge, animalWeight);
-		}
-
-		if ("Eagle".equalsIgnoreCase(type)) {
-			animal = new Eagle(animalName, animalAge, animalWeight);
-		}
-
-		if ("Snake".equalsIgnoreCase(type)) {
-			animal = new Snake(animalName, animalAge, animalWeight);
-		}
-		if ("Crocodile".equalsIgnoreCase(type)) {
-			animal = new Crocodile(animalName, animalAge, animalWeight);
-		}
-		if(animal != null){
-			listOfAnimal.put(animalCounter, animal);
-			return true;
-		}
-		return false;
 	}
 
 	/**

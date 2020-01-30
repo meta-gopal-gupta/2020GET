@@ -24,13 +24,12 @@ public class Zone {
 	 * @param animalCapacity
 	 * @return true if cage added successfully
 	 */
-	public boolean addCage(String animalBread, int animalCapacity) {
+	public boolean addCage(Cage cage) {
 		cageCounter++;
 		
 		if(!isSpaceAvaliable()){
 			return false;
 		}
-		Cage cage = new Cage(animalBread, animalCapacity);
 		listOfCage.put(cageCounter, cage);
 		return true;
 		

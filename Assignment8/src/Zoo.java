@@ -24,13 +24,12 @@ public class Zoo {
 	 * @param animalCapacity
 	 * @return true if zone is added Successfully
 	 */
-	public boolean addZone(String animalCategory, int animalCapacity) {
+	public boolean addZone(Zone zone) {
 		zoneCounter++;
 		
 		if(!isSpaceAvaliable()){
 			return false;
 		}
-		Zone zone = new Zone(animalCategory, animalCapacity);
 		listOfZone.put(zoneCounter, zone);
 		return true;
 		
