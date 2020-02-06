@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <servlet>
+  	<servlet-name>employeeRegistration</servlet-name>
+  	<servlet-class>com.MetacubeParkingSystem.EmployeeRegistrationServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>employeeRegistration</servlet-name>
+  	<url-pattern>/EmployeeRegistration</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>vehicleRegistration</servlet-name>
+  	<servlet-class>com.MetacubeParkingSystem.VehicleRegistrationServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>vehicleRegistration</servlet-name>
+  	<url-pattern>/VehicleRegistration</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>signIn</servlet-name>
+  	<servlet-class>com.MetacubeParkingSystem.SignInServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>signIn</servlet-name>
+  	<url-pattern>/SignIn</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>employeeDetailUpdate</servlet-name>
+  	<servlet-class>com.MetacubeParkingSystem.UpdateEmployeeDetailServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>employeeDetailUpdate</servlet-name>
+  	<url-pattern>/UpdateEmployeeDetail</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>peopleInOrganization</servlet-name>
+  	<servlet-class>com.MetacubeParkingSystem.PeopleInOrganization</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>peopleInOrganization</servlet-name>
+  	<url-pattern>/PeopleInOrganization</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+</web-app>
