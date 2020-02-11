@@ -12,12 +12,11 @@ public class SqlOperation {
 	Statement stmt = null;
 	
 	public SqlOperation(){
-		Connection con;
 		try {
 			con = SqlConnection.sqlConnect("booksystem", "root",
 					"1234");
 			stmt = con.createStatement();
-			createTable();
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -59,11 +58,13 @@ public class SqlOperation {
 	}
 
 	public Book getBook(String title){
-		Book book = new Book();
+		Book book = null;
 		ResultSet result;
 		try {
+			
 			result = stmt.executeQuery(String.format("SELECT * FROM book WHERE title = '%s'",title));
 			if (result.next()) {
+				book = new Book();
 				book.setId(result.getInt(1));
 				book.setTitle(result.getString(2));
 				book.setWriter(result.getString(3));
@@ -102,8 +103,8 @@ public class SqlOperation {
 	public void create(Book book) {
 		try {
 			stmt.executeUpdate(String
-					.format("insert into Book(title,writer,publisher,PUBLISHEDYEAR) values('%s','%s','%s',%d)",
-							book.getTitle(), book.getWriter(), book.getPublisher(),
+					.format("insert into Book values(%d,'%s','%s','%s',%d)",
+							book.getId(),book.getTitle(), book.getWriter(), book.getPublisher(),
 							book.getPublishedYear()));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
