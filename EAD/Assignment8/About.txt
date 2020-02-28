@@ -1,0 +1,3 @@
+This is spring boot MVC assignment 
+simple add student and display all students
+no database is used here

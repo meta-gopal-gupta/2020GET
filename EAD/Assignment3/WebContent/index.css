@@ -1,0 +1,91 @@
+@CHARSET "ISO-8859-1";
+* {
+            margin: 0;
+            padding: 0;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .outerBox {
+            border: 2px solid black;
+            margin: 100px auto;
+            width: 900px;
+            height: auto;
+            padding: 20px;
+        }
+        
+        .outerBox .innerBox {
+            width: 200px;
+            border: 2px solid black;
+            margin: 20px;
+            padding: 20px 10px;
+            display: inline-block;
+            transition: 1s;
+        }
+        
+        .outerBox .innerBox:hover {
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+        }
+        
+        fieldset {
+            display: inline-block;
+            border: 2px solid black;
+            height: 40px;
+            width: calc(50% - 48px);
+            margin: 5px 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+        
+        input[type=text],
+        input[type=email],
+        input[type=number],
+        textarea,
+        select {
+            border: none;
+            width: 100%;
+            font-size: 15px;
+            color: black;
+            outline: none;
+            font-family: 'Rubik', sans-serif;
+            text-transform: capitalize;
+            vertical-align: baseline;
+            margin-top: 3px;
+        }
+        
+        input[type=submit] {
+            border: none;
+            width: 100px;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            margin: 20px;
+        }
+        table,
+        td,
+        th {
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th,
+        td {
+            padding: 15px;
+        }
+        table a {
+            border: 2px solid black;
+            padding: 5px 18px;
+            background-color: black;
+            color: white;
+        }

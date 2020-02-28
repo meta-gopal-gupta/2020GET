@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+ 
+	
+	<servlet>
+		<servlet-name>addStudent</servlet-name>
+		<servlet-class>com.StudentServlet.StudentServlet</servlet-class>
+	</servlet>    
+	<servlet-mapping>
+		<servlet-name>addStudent</servlet-name>
+		<url-pattern>/AddStudent</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>showAllStudent</servlet-name>
+		<servlet-class>com.StudentServlet.ShowAllStudentServlet</servlet-class>
+	</servlet>    
+	<servlet-mapping>
+		<servlet-name>showAllStudent</servlet-name>
+		<url-pattern>/ShowAllStudent</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>updateStudentDetail</servlet-name>
+		<servlet-class>com.StudentServlet.UpdateStudentDetailServlet</servlet-class>
+	</servlet>    
+	<servlet-mapping>
+		<servlet-name>updateStudentDetail</servlet-name>
+		<url-pattern>/UpdateStudentDetail</url-pattern>
+	</servlet-mapping>
+	
+
+	<servlet>
+		<servlet-name>searchStudent</servlet-name>
+		<servlet-class>com.StudentServlet.SearchStudentServlet</servlet-class>
+	</servlet>    
+	<servlet-mapping>
+		<servlet-name>searchStudent</servlet-name>
+		<url-pattern>/SearchStudent</url-pattern>
+	</servlet-mapping>
+	
+
+
+</web-app>
