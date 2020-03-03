@@ -15,15 +15,15 @@
 				<input type="radio" id="daily" name="price"> <label
 					id="dailyPrice" class="price" for="daily">
 					<p>Daily</p> <br>
-					<h1 id="dailyPriceRate">10 INR</h1>
+					<p id="dailyPriceRate">10 INR</p>
 				</label> <input type="radio" id="monthly" name="price"> <label
 					id="monthlyPrice" class="price" for="monthly">
 					<p>Monthly</p> <br>
-					<h1 id="monthlyPriceRate">100 INR</h1>
+					<p id="monthlyPriceRate">100 INR</p>
 				</label> <input type="radio" id="yearly" name="price" checked> <label
 					id="yearlyPrice" class="price" for="yearly">
 					<p>Yearly</p> <br>
-					<h1 id="yearlyPriceRate">500 INR</h1>
+					<p id="yearlyPriceRate">500 INR</p>
 				</label> <select id="currencyType" onchange="changeCurrency()">
 					<option value="INR" selected>INR</option>
 					<option value="USD">USD</option>
@@ -43,13 +43,13 @@
 					<br>
 					<h1 id="priceRate">10 INR</h1>
 				</div>
-				<button onclick="calculatesMoney(${vehicleType})">Pay</button>
+				<button onclick="calculatesMoney('${vehicleType}')">Pay</button>
 			</div>
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
-changeCurrency(${vehicleType});
+changeCurrency('${vehicleType}');
 </script>
 <%@include file="../includes/footer.jsp" %>
 
