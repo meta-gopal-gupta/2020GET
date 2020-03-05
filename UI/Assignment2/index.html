@@ -1,0 +1,167 @@
+<html>
+
+<head>
+    <title>Parcking System</title>
+    <link href="index.css" rel="stylesheet">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="#addEmployee"><span>Add Employee</span></a>
+        <a href="#addVehicle"><span>Add Vehicle</span></a>
+        <a href="#feedback"><span>Give feedback</span></a>
+        <a href="#type"><span>Pricing</span></a>
+    </header>
+    <div class="box" id="addEmployee">
+        <div class="aboutForm floatLeft">
+            <img src="sign-up-4.png" alt="employeeRegistrationImage">
+            <h3>Employee Registration</h3>
+        </div>
+        <div class="employeeDetail insideBox">
+            <div class="boxTitle">
+                <h1>Employ Detail</h1>
+            </div>
+            <div class="boxContent">
+                <fieldset id="nameField">
+                    <legend>&nbsp; Name&nbsp; </legend>
+                    <input id="name" type="text" placeholder="Enter Name....." name="name" required>
+                </fieldset>
+                <fieldset id="emailField">
+                    <legend>&nbsp; Email&nbsp; </legend>
+                    <input id="email" type="email" placeholder="Enter Email....." name="email" required>
+                </fieldset>
+                <fieldset id="mobileField">
+                    <legend>&nbsp; Mobile &nbsp;</legend>
+                    <input id="mobile" type="number" placeholder="Enter Mobile....." name="mobile" required>
+                </fieldset>
+                <fieldset id="passwordField">
+                    <legend> &nbsp;Password&nbsp; </legend>
+                    <input id="password" type="password" placeholder="Enter Password....." name="password" required>
+                </fieldset>
+                <fieldset id="rePasswordField">
+                    <legend> &nbsp;Re Password&nbsp; </legend>
+                    <input id="rePassword" type="password" placeholder=" Re Enter Password....." name="rePassword" required>
+                </fieldset>
+                <fieldset>
+                    <legend> &nbsp;Gender&nbsp; </legend>
+                    <input type="radio" id="male" name="gender" checked>
+                    <label for="male">Male</label>
+
+                    <input type="radio" id="female" name="gender">
+                    <label for="female">Female</label>
+                </fieldset>
+                <button>Next</button>
+            </div>
+        </div>
+    </div>
+    <div class="box" id="addVehicle">
+        <div class="vehicleDetail insideBox">
+            <div class="boxTitle">
+                <h1>Vehicle Detail</h1>
+            </div>
+            <div class="boxContent">
+                <fieldset id="vehicleCompanyNameField">
+                    <legend> Vehicle Company Name</legend>
+                    <input id="vehicleName" type="text" placeholder="Enter Vehicle Company Name....." name="vehicleCompanyName" required>
+                </fieldset>
+                <fieldset id="vehicleTypeField">
+                    <legend>&nbsp; Vehicle Type&nbsp; </legend>
+                    <select id="vehicleType">
+                        <option disabled selected hidden>Select Vehicle</option>
+                        <option value="Cycle">Cycle</option>
+                        <option value="Bicycle">Bycycle</option>
+                        <option value="Car">Car</option>
+                    </select>
+                </fieldset>
+                <fieldset id="vehicleNumberField">
+                    <legend>&nbsp; Vehicle Number &nbsp;</legend>
+                    <input id="vehicleNumber" type="text" placeholder="Enter Vehicle Number ....." name="vehicleNumber" required>
+                </fieldset>
+                <fieldset id="employeeIdField">
+                    <legend> &nbsp;Employee ID&nbsp; </legend>
+                    <input id="employeeId" type="text" value="E20/1343" name="employeeId" readonly>
+                </fieldset>
+                <fieldset id="vehicleDiscriptionField">
+                    <legend> &nbsp;Vehicle Description&nbsp; </legend>
+                    <textarea id="vehicleDiscription" name="vehileDiscription" placeholder="My vehicle is..........."></textarea>
+                </fieldset>
+                <button>Next</button>
+            </div>
+        </div>
+        <div class="aboutForm floatRight">
+            <img src="bermuda-autopilot-vehicles.png" alt="vehicleRegistrationImage">
+            <h3>Vehicle Registration</h3>
+        </div>
+    </div>
+    <div class="box" id="feedback">
+        <div class="aboutForm floatLeft">
+            <img src="taxi-4.png" alt="Send Feedback Image">
+            <h3>Get In Touch</h3>
+        </div>
+        <div class="vehicleDetail insideBox">
+            <div class="boxTitle">
+                <h1>Feedback Form</h1>
+            </div>
+            <div class="boxContent">
+                <fieldset id="senderName">
+                    <legend> Name</legend>
+                    <input id="nameOfSender" type="text" placeholder="Name....." name="nameOfSender" required>
+                </fieldset>
+                <fieldset id="senderEmail">
+                    <legend>&nbsp; Email &nbsp;</legend>
+                    <input id="emailOfSender" type="email" placeholder="Email ....." name="emailOfSender" required>
+                </fieldset>
+                <fieldset id="senderSubject">
+                    <legend> &nbsp;Subject&nbsp; </legend>
+                    <input id="subjectOfSender" type="text" placeholder="Subject" name="subjectOfSender" required>
+                </fieldset>
+                <fieldset id="senderMessage">
+                    <legend> &nbsp;Message&nbsp; </legend>
+                    <textarea id="messageOfSender" name="messageOfSender" placeholder="Message..........."></textarea>
+                </fieldset>
+                <button>Send Email</button>
+            </div>
+        </div>
+    </div>
+    <div class="box" id="type">
+        <div class="planDetail insideBox">
+            <div class="boxTitle">
+                <h1>Select Plan</h1>
+            </div>
+            <div class="boxContent">
+
+                <input type="radio" id="daily" name="price">
+                <label id="dailyPrice" class="price" for="daily">
+                    <p>Daily</p><br>
+                    <h1 id="dailyPriceRate">10 INR</h1>
+                </label>
+                <input type="radio" id="monthly" name="price">
+                <label id="monthlyPrice" class="price" for="monthly">
+                    <p>Monthly</p><br>
+                    <h1 id="monthlyPriceRate">100 INR</h1>
+                </label>
+
+                <input type="radio" id="yearly" name="price" checked>
+                <label id="yearlyPrice" class="price" for="yearly">
+                    <p>Yearly</p><br>
+                    <h1 id="yearlyPriceRate">500 INR</h1>
+                </label>
+
+                <select id="currencyType" onchange="changeCurrency()">
+                    <option value="INR" selected>INR</option>
+                    <option value="USD">USD</option>
+                    <option value="YEN">YEN</option>
+                </select><br>
+
+                <button>Next</button>
+            </div>
+        </div>
+        <div class="aboutForm floatRight">
+            <img src="clip-payment.png" alt="Pricing Image">
+            <h3>Pricing Section</h3>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("images/bodybg.png");
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+
+
+/* CSS for header section */
+
+header {
+    padding: 25px 14%;
+    background-image: url("images/homebg.png");
+    background-position: center;
+    background-size: cover;
+    height: 125vh;
+}
+
+
+/* CSS for nav part */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav>div {
+    text-align: center;
+}
+
+.websiteLogo img {
+    width: 100px;
+}
+
+.websiteLogo,
+.socialIcons {
+    width: 10%;
+}
+
+.socialIcons i {
+    font-size: 15px;
+    color: white;
+    padding: 0 4px;
+}
+
+.navMenus {
+    width: 80%;
+}
+
+.navMenus a {
+    text-decoration: none;
+}
+
+.navMenus span {
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+}
+
+
+/* CSS end for nav part */
+
+
+/* CSS for section in header */
+
+header section {
+    display: flex;
+    justify-content: space-between;
+    padding: 120px 0;
+}
+
+header section>div,
+footer section>div {
+    text-align: center;
+}
+
+.leftInfoBox {
+    text-align: left;
+}
+
+.rightImageBox {
+    text-align: right;
+}
+
+.leftInfoBox h1 {
+    font-size: 49px;
+    color: white;
+}
+
+.leftInfoBox button {
+    width: 110px;
+    text-align: center;
+    border: none;
+    padding: 15px 25px;
+    margin: 50px 5px;
+    font-size: 12px;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.rightImageBox img {
+    width: 450px;
+}
+
+
+/* CSS End for section in header */
+
+
+/* CSS End for header section */
+
+
+/* Css for article */
+
+article {
+    padding: 40px 14%;
+}
+
+article .sectionTitle {
+    margin: 60px;
+    color: #546de5;
+    text-align: center;
+}
+
+article .sectionTitle h2 {
+    font-size: 30px;
+    padding: 10px;
+}
+
+article .sectionTitle p {
+    color: rgb(151, 151, 151);
+    font-weight: 100;
+}
+
+article .outerBox {
+    margin: 100px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+article .outerBox .innerBox {
+    width: 32%;
+    display: flex;
+    justify-content: space-between;
+}
+
+article .outerBox .innerBox .leftBox {
+    width: 30%;
+    padding: 0 10px;
+    color: red;
+    font-size: 70px;
+    height: auto;
+    background-color: rgb(251, 251, 251);
+}
+
+article .outerBox .innerBox .rightBox {
+    width: 70%;
+}
+
+article .outerBox .innerBox .rightBox h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+article .outerBox .innerBox .rightBox p {
+    font-size: 13px;
+    color: rgb(101, 101, 101);
+    font-weight: 400;
+    line-height: 20px;
+}
+
+article section .weatherImages {
+    text-align: center;
+}
+
+article section .weatherImages img {
+    width: 650px;
+}
+
+.screenshots {
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+}
+
+.screenshots .leftInfoBox h3 {
+    color: black;
+    font-size: 33px;
+    margin: 20px 0;
+}
+
+.screenshots .rightImageBox img {
+    width: 250px;
+}
+
+.reviews {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.reviews .review {
+    width: 48%;
+    height: 100px;
+    margin: 20px 0%;
+}
+
+.reviews .review p {
+    font-size: 22px;
+    margin: 10px 0;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+}
+
+footer {
+    padding-top: 80px;
+    background-color: #546de5;
+}
+
+footer section {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 14%;
+    color: white;
+}
+
+footer section h3 {
+    font-size: 30px;
+    padding: 20px 0;
+}
+
+footer section p {
+    font-size: 16px;
+    padding-right: 80px;
+}
+
+.downloadIcons {
+    padding: 20px 0;
+}
+
+.downloadIcons img {
+    width: 120px;
+    padding-right: 5px;
+}
+
+.bottom {
+    padding: 5px 14%;
+    background-color: #192a56;
+}
+
+.bottom nav {
+    padding: 25px 0;
+}
+
+.bottom .allRights {
+    padding: 20px;
+    margin: 10px 0;
+    font-size: 14px;
+    text-align: center;
+    border-top: 2px solid rgb(51, 51, 51);
+    text-align: center;
+    color: rgb(151, 151, 151);
+}
+
+
+/* CSS for responsic=ve col's */
+
+.alignLeft {
+    text-align: left;
+}
+
+.alignCenter {
+    text-align: center;
+}
+
+.alignRight {
+    text-align: right;
+}
+
+.red {
+    background-color: #e15f41;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
