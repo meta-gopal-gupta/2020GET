@@ -1,0 +1,27 @@
+spring:
+  mvc:
+   view:
+    prefix: /WEB-INF/pages/
+    suffix: .jsp
+  datasource: 
+   url: jdbc:mysql://localhost:3306/metaparking
+   username: root
+   password: 1234   
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+  security:
+    user:
+      name: Gopal
+      password: 1234
+      
+home:
+ message: Welcome Default  
+ alreadyLogin: Your Session is already Started, you can logout if you want
+ updated: Your profile is successfully updated
+ vehicleAdded: Your Vehicle is registered successfully
+logout:
+ message: Successfully Logout
+
+
