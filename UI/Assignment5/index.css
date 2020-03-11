@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.header {
+    border-bottom: 1px solid rgb(201, 201, 201);
+}
+
+.pagination a {
+    border-radius: 20px;
+}
+
+footer {
+    padding: 2.5rem 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem solid #e5e5e5;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+.font {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
