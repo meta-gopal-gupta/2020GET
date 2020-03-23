@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+.box {
+    border: 2px solid black;
+    width: 80%;
+    height: 400px;
+    margin: 60px auto;
+}
+
+.box .priceDetail {
+    display: none;
+}
+
+.box .boxTitle {
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    height: 50px;
+}
+
+.box .boxTitle h1 {
+    font-size: 40px;
+}
+
+.box .boxContent {
+    padding-top: 40px;
+    height: 270px;
+}
+
+fieldset {
+    display: inline-block;
+    border: 2px solid black;
+    height: 40px;
+    width: calc(50% - 48px);
+    margin: 5px 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+textarea,
+select {
+    border: none;
+    width: 100%;
+    font-size: 15px;
+    color: black;
+    outline: none;
+    font-family: 'Rubik', sans-serif;
+    text-transform: capitalize;
+    vertical-align: baseline;
+    margin-top: 3px;
+}
+
+#vehicleDescriptionField {
+    width: 70%;
+    background-color: red;
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    resize: none;
+    outline: none;
+    height: 20px;
+}
+
+input[type=radio] {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+
+label {
+    text-align: center;
+    cursor: pointer;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 2px solid black;
+    display: inline-block;
+}
+
+input[type=radio]:checked+label {
+    background-color: black;
+    outline: 2px solid #fff;
+    color: white;
+}
+
+button {
+    border: none;
+    border: 2px solid black;
+    padding: 5px 15px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    float: right;
+    margin: 20px;
+    outline: none;
+}
+
+.box .boxBottom {
+    clear: both;
+    height: 30px;
+    border-top: 2px solid black;
+}
+
+.box .boxBottom .process {
+    width: 33.3333%;
+    float: left;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.planDetail {
+    text-align: center;
+}
+
+.planDetail .price {
+    width: 25%;
+    margin: 10px;
+    border: 2px solid black;
+    height: 90px;
+    display: inline-block;
+}
+
+.planDetail select {
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.priceDetail {
+    text-align: center;
+}
+
+.priceDetail .totalPrice {
+    border: 2px solid black;
+    width: 400px;
+    padding: 20px;
+    margin: auto;
+}
+
+.priceDetail .totalPrice p {
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.priceDetail .totalPrice {
+    font-weight: 800;
+    font-size: 25px;
+}
