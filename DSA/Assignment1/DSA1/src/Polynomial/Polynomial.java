@@ -10,6 +10,7 @@ package Polynomial;
 public class Polynomial {
 	static DoublyLinkList startNode = null;
 	static Power tempHead;
+	static int maxPower;
 	
 	/***
 	 * To add polynomial
@@ -49,18 +50,23 @@ public class Polynomial {
 	public static void display() {
 		DoublyLinkList tempNode = startNode;
 		char[] charExp = {'x','y','z'};
-		
 		while (tempNode != null){
+			int temp = 0;
 			int index = 0;
 			System.out.print(tempNode.coefficient);
 			Power headNode = tempNode.power;
 			while( index < charExp.length){
 				System.out.print(charExp[index++]);
 				System.out.print(headNode.degree);
+				temp += headNode.degree;
 				headNode = headNode.next;
+			}
+			if(maxPower<temp){
+				maxPower = temp;
 			}
 			System.out.print(" + ");
 			tempNode = tempNode.next;
 		}
 	}
+	
 }

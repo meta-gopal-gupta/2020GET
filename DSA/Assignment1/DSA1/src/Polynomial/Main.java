@@ -15,5 +15,6 @@ public class Main {
 		Polynomial.add(1,b);
 		Polynomial.add(4,c);		
 		Polynomial.display();
+		System.out.println("\n"+Polynomial.maxPower);
 	}
 }

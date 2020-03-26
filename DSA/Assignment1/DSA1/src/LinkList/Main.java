@@ -9,8 +9,8 @@ public class Main {
 	public static void main(String[] args){
 		
 		final int l = 2; // Position of the starting element
-		final int r = 5; // Position of the last element
-		final int n = 2; // Number of rotation
+		final int r = 7;  // Position of the last element
+		final int n = 9; // Number of rotation
 
 		SinglyLinkList.addNode(2);
 		SinglyLinkList.addNode(3);

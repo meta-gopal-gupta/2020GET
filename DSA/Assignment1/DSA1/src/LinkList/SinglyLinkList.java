@@ -1,8 +1,8 @@
 package LinkList;
+
 /***
  * 
- * @author Gopal
- * Polynomial
+ * @author Gopal Polynomial
  */
 
 public class SinglyLinkList {
@@ -40,33 +40,45 @@ public class SinglyLinkList {
 	}
 
 	/***
-	 * 
 	 * @param L
 	 * @param R
 	 * @param N
 	 * @return to rotate the sub link list
 	 */
-	public static int rotate(int L, int R, int N) {
-		Node tempNode = startNode, prevOfL = null, prev = null, nodeAtRotaingNode = null;
-		int count = 1, rotateNodes = R - L + 1, rotatingNode = rotateNodes - N
-				+ 1;
-		if (N % rotateNodes == 0)
-			return 0;
-		while (count != R) {
-			if (count == L - 1)
-				prevOfL = tempNode;
-			if (count == rotatingNode) {
-				prev = tempNode;
-				nodeAtRotaingNode = tempNode.next;
-			}
-			tempNode = tempNode.next;
-			count++;
+	public static void rotate(int L, int R, int N) {
+		if (L < 1 || L >= R || R > length || N < 0) {
+			System.out
+					.println("\nNo rotation done because something is wrong in L,R,N ");
 		}
-		prev.next = tempNode.next;
-		tempNode.next = prevOfL.next;
-		prevOfL.next = nodeAtRotaingNode;
-		return 1;
+		else {
+			Node traverseNode = startNode;
+			int sizeOfSubList = R - L + 1;
+			int count = L - 1;
+			Node subListStart;
+			while (count > 0) {
+				traverseNode = traverseNode.next;
+				count -= 1;
+			}
+			subListStart = traverseNode;
+			N = N % sizeOfSubList;
+			while (N > 0) {
+				sizeOfSubList = R - L;
+				traverseNode = subListStart.next;
+				int nextDataItem, dataItem = subListStart.data;
+				while (sizeOfSubList > 0) {
+					nextDataItem = traverseNode.data;
+					traverseNode.data = dataItem;
+					dataItem = nextDataItem;
+					traverseNode = traverseNode.next;
+					sizeOfSubList -= 1;
+				}
+				subListStart.data = dataItem;
+				N -= 1;
+			}
+
+		}
 	}
+
 
 	/***
 	 * To check that loop exist or not
@@ -84,5 +96,4 @@ public class SinglyLinkList {
 		return false;
 	}
 
-	
 }
