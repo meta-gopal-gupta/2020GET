@@ -1,0 +1,7 @@
+<section class="new-todos-section text-center">
+    <header>New</header>
+    <div *ngFor="let todo of todos">
+        <!-- 0 refers to new task -->
+        <app-todo-item [todo]="todo" *ngIf="(todo.status === 0) "></app-todo-item>
+    </div>
+</section>

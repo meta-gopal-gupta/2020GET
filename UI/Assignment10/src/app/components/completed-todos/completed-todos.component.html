@@ -1,0 +1,7 @@
+<section class="completed-todos-section text-center">
+    <header>Completed</header>
+    <div *ngFor="let todo of todos">
+        <!-- 2 refers to completed task -->
+        <app-todo-item [todo]="todo" *ngIf="(todo.status === 2) "></app-todo-item>
+    </div>
+</section>

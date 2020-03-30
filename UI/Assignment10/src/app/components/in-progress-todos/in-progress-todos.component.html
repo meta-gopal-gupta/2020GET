@@ -1,0 +1,7 @@
+<section class="in-progress-todos-section text-center">
+    <header>In-Progress</header>
+    <div *ngFor="let todo of todos">
+        <!-- 1 refers to in-progress task -->
+        <app-todo-item [todo]="todo" *ngIf="(todo.status === 1) "></app-todo-item>
+    </div>
+</section>
