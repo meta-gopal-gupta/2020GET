@@ -1,0 +1,8 @@
+.app-name {
+    font-size: 1em;
+}
+
+.add-todo-section {
+    border-bottom: 1px dashed #2d3436;
+    border-radius: 5px;
+}

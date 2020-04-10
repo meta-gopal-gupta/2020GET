@@ -1,0 +1,10 @@
+<div class="container">
+    <app-add-todo></app-add-todo>
+    <app-add-todo-modal (addTodo)="addTodo($event)" class="modal fade" id="add-todo-form" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true"></app-add-todo-modal>
+    <section class="todos-section row mt-2 d-flex justify-content-center">
+        <app-new-todos [todos]="todos" class="col-3"></app-new-todos>
+        <app-in-progress-todos [todos]="todos" class="col-3"></app-in-progress-todos>
+        <app-completed-todos [todos]="todos" class="col-3"></app-completed-todos>
+    </section>
+</div>
